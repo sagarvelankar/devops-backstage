@@ -12,3 +12,5 @@ yarn --cwd packages/backend add @backstage/plugin-auth-backend-module-github-pro
 yarn --cwd packages/app add @backstage-community/plugin-jenkins
 yarn --cwd packages/backend add @backstage-community/plugin-jenkins-backend
 
+# Look and feel
+mkdir packages/app/src/themes
