@@ -59,6 +59,12 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
+import {
+  EntityJenkinsContent,
+  EntityLatestJenkinsRunCard,
+  isJenkinsAvailable,
+} from '@backstage-community/plugin-jenkins';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -78,6 +84,10 @@ const cicdContent = (
         <EntityGithubActionsContent />
       </EntitySwitch.Case>
      */}
+    
+    <EntitySwitch.Case if={isJenkinsAvailable}>
+      <EntityJenkinsContent />
+    </EntitySwitch.Case>
 
     <EntitySwitch.Case>
       <EmptyState
@@ -142,6 +152,17 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+    <EntitySwitch>
+      <EntitySwitch.Case if={isJenkinsAvailable}>
+        <Grid item md={6} xs={12}>
+          <EntityLatestJenkinsRunCard
+            branch="main,master"
+            variant="gridItem"
+          />
+        </Grid>
+      </EntitySwitch.Case>
+      {/* ... */}
+    </EntitySwitch>
   </Grid>
 );
 
@@ -188,6 +209,7 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+    
   </EntityLayout>
 );
 

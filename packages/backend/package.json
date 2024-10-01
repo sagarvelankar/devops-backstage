@@ -16,6 +16,7 @@
     "build-image": "docker build ../.. -f Dockerfile --tag backstage"
   },
   "dependencies": {
+    "@backstage-community/plugin-jenkins-backend": "^0.6.0",
     "@backstage/backend-defaults": "^0.5.0",
     "@backstage/config": "^1.2.0",
     "@backstage/plugin-app-backend": "^0.3.74",
@@ -42,7 +43,7 @@
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "node-gyp": "^10.0.0",
-    "pg": "^8.11.3",
+    "pg": "^8.13.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
