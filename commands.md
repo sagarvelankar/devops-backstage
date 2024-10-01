@@ -14,3 +14,6 @@ yarn --cwd packages/backend add @backstage-community/plugin-jenkins-backend
 
 # Look and feel
 mkdir packages/app/src/themes
+
+# Home page
+yarn --cwd packages/app add @backstage/plugin-home
