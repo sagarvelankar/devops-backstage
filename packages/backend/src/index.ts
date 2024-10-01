@@ -53,4 +53,7 @@ backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
 // jenkins
 backend.add(import('@backstage-community/plugin-jenkins-backend'));
 
+// github scaffolder module
+backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
+
 backend.start();

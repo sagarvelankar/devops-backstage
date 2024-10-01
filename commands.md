@@ -17,3 +17,6 @@ mkdir packages/app/src/themes
 
 # Home page
 yarn --cwd packages/app add @backstage/plugin-home
+
+# Create component
+yarn --cwd packages/backend add @backstage/plugin-scaffolder-backend-module-github
